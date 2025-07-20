@@ -1,0 +1,15 @@
+.top-right-glare {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: linear-gradient(
+    229deg,
+    rgba(125, 2, 156, 1) 0%,
+    rgba(250, 180, 100, 1) 100%
+  );
+  position: absolute;
+  right: -200px;
+  top: -200px;
+  filter: blur(200px);
+  box-shadow: -200px 10px 300px rgb(148, 40, 172);
+}
