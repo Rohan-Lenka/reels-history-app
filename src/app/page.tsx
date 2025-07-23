@@ -1,14 +1,9 @@
+import GetStarted from "@/UI/components/Buttons/GetStarted"
 import "../styles/glare.css"
-import { redirect, RedirectType } from 'next/navigation'
-import Button from "../UI/Button"
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import SignIn from "@/UI/components/Buttons/SignIn"
+import Arrow from "@/icons/Arrow"
 
-export default async function Landing() {
-  const session = await getServerSession(authOptions)
-  if(session) {
-    redirect("/dashboard", RedirectType.replace)
-  }
+export default function Landing() {
   return <>
     <div className="top-right-glare"></div>
     <div className="text-6xl text-white font-bold absolute left-20 top-32 font-mono">
@@ -20,10 +15,12 @@ export default async function Landing() {
       <p>Keep a complete history of every Instagram Reel you've watched.</p>
       <p>Easily revisit, organize, and rediscover your watched Reels.</p>
     </div>
+    <div className="absolute top-116 left-1/2 border-2 border-indigo-400 rounded-full p-1 animate-bounce">
+    <Arrow />
+    </div>
     <div className="absolute top-5 left-240 flex justify-center items-center gap-14">
-    {/* add link tags on both buttons */}
-    <Button variant="primary" text="Get Started" />
-    <Button variant="secondary" text="Sign In" /> 
+      <GetStarted />
+      <SignIn />
     </div>
   </>
 }
