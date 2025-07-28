@@ -3,6 +3,18 @@ import { Payload } from "@/types";
 import { arrayUnion, doc, setDoc } from "firebase/firestore/lite";
 import { NextResponse } from "next/server";
 
+// for CORS issue 
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "https://www.instagram.com/*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
+}
+
 export async function POST(req: Request) {
     try {
         const payload: Payload = await req.json();
