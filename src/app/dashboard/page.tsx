@@ -8,6 +8,7 @@ import db from "@/db";
 import { Reel } from "@/types";
 import getPaddedDate from "@/utils/getPaddedDate";
 import getPaddedTime from "@/utils/getPaddedTime";
+import { div } from "motion/react-client";
 
 export default async function Dashboard() {
     const session: Session | null = await getServerSession(authOptions)
@@ -23,8 +24,15 @@ export default async function Dashboard() {
         </div>
     }
 
+    const email = session?.user?.email
+    if(!email) {
+        return <div className="h-screen w-screen bg-black text-white">
+            server error
+        </div>
+    }
+
     let reels: Reel[]
-    const docRef = doc(db, process.env.COLLECTION || "reels history collection", session?.user?.email!)
+    const docRef = doc(db, process.env.COLLECTION || "reels history collection", email)
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         reels = docSnap.data()["reels"] || []

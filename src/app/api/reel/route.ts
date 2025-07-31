@@ -26,7 +26,8 @@ export async function POST(req: Request) {
             })
         }, { merge: true })
         return NextResponse.json({ message: "Reel added to firestore successfully" }, { status: 200 })
-    } catch (err: any) {
-        return NextResponse.json({ message: "Reel could not be added to firestore", error: err.message }, { status: 500 })
+    } catch (err: unknown) {
+        const error = err as Error;
+        return NextResponse.json({ message: "Reel could not be added to firestore", error: error.message }, { status: 500 })
     }
 }
