@@ -55,6 +55,9 @@ export default async function Dashboard() {
 
             {/* all reels */}
             <div className="mt-6">
+                {!reels.length && <div className="text-center text-white p-8 bg-black/30 rounded-lg mb-1">
+                    No reels to show !
+                </div>}
                 {reels.map((reel, key) => {
                     {/* each reel */ }
                     return <div key={key} className="flex justify-between text-white text-sm px-8 bg-black/30 rounded-lg mb-1">
