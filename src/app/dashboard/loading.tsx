@@ -1,4 +1,4 @@
-import Spinner from "@/UI/Spinner";
+import Spinner from "@/components/ui/Spinner";
 
 export default function DashboardLoading() {
     return <div className="h-screen w-screen flex justify-center items-center">

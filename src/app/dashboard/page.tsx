@@ -1,8 +1,8 @@
-import Logout from "@/UI/components/Buttons/Logout";
+import Logout from "@/components/buttons/Logout";
 import "../../styles/glare.css";
 import { getServerSession, Session } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import SignIn from "@/UI/components/Buttons/SignIn";
+import SignIn from "@/components/buttons/SignIn";
 import { doc, getDoc } from "firebase/firestore/lite";
 import db from "@/db";
 import { Reel } from "@/types";
