@@ -1,14 +1,13 @@
 import Logout from "@/components/buttons/Logout";
 import "../../styles/glare.css";
 import { getServerSession, Session } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import SignIn from "@/components/buttons/SignIn";
 import { doc, getDoc } from "firebase/firestore/lite";
 import db from "@/db";
 import { Reel } from "@/types";
 import getPaddedDate from "@/utils/getPaddedDate";
 import getPaddedTime from "@/utils/getPaddedTime";
-import { div } from "motion/react-client";
+import { authOptions } from "../api/auth/[...nextauth]/options";
 
 export default async function Dashboard() {
     const session: Session | null = await getServerSession(authOptions)

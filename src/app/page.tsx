@@ -3,9 +3,9 @@ import "../styles/glare.css"
 import SignIn from "@/components/buttons/SignIn"
 import Arrow from "@/icons/Arrow"
 import { getServerSession } from "next-auth"
-import { authOptions } from "./api/auth/[...nextauth]/route"
 import { redirect } from "next/navigation"
 import { Manual } from "@/components/Manual"
+import { authOptions } from "./api/auth/[...nextauth]/options"
 
 export default async function Landing() {
 
