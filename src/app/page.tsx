@@ -14,7 +14,7 @@ export default async function Landing() {
     redirect('/dashboard');
   }
 
-  return <>
+  return <div className="h-full w-full">
     <div className="top-right-glare"></div>
     <div className="text-6xl text-white font-bold absolute left-20 top-32 font-mono">
       <p className="mb-3">Never Lose Track of</p>
@@ -35,8 +35,8 @@ export default async function Landing() {
     <div className="w-full absolute top-145 text-6xl font-mono text-white font-bold text-center">
       <p className="ml-8">How to Setup ?</p>
     </div>
-    <div id="div-with-manual" className="absolute top-142 w-full ">
+    <div id="div-with-manual" className="absolute top-142 w-full min-h-600">
       <Manual />
     </div>
-  </>
+  </div>
 }
