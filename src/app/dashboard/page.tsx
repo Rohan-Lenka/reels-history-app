@@ -77,6 +77,9 @@ export default async function Dashboard() {
                         </div>
                     </div>
                 })}
+                 <div className="text-center text-white p-8 bg-black/30 rounded-lg mb-1">
+                    🔄 Refresh the page to load the latest ones 
+                </div>
             </div>
 
         </div>
